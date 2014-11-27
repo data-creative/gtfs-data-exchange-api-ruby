@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["MJ Rossetti (@s2t2)"]
   spec.email         = ["s2t2mail@gmail.com"]
   spec.summary       = %q{A ruby wrapper for the [gtfs-data-exchange.com api](http://www.gtfs-data-exchange.com/api).}
-  spec.description   = %q{Exposes the `agencies` and `agency` endpoints.}
+  spec.description   = %q{A ruby wrapper for the [gtfs-data-exchange.com api](http://www.gtfs-data-exchange.com/api).}
   spec.homepage      = "https://github.com/databyday/gtfs-data_exchange"
   spec.license       = "MIT"
 
