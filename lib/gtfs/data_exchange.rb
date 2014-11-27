@@ -1,7 +1,9 @@
-require "gtfs/data_exchange/version"
+require 'httparty'
 
-module Gtfs
+module GTFS
   module DataExchange
-    # Your code goes here...
   end
 end
+
+require "gtfs/data_exchange/version"
+require "gtfs/data_exchange/api"
