@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["MJ Rossetti (@s2t2)"]
   spec.email         = ["s2t2mail@gmail.com"]
   spec.summary       = %q{A ruby wrapper for the [gtfs-data-exchange.com api](http://www.gtfs-data-exchange.com/api).}
-  spec.description   = %q{A ruby wrapper for the [gtfs-data-exchange.com api](http://www.gtfs-data-exchange.com/api).}
-  spec.homepage      = "https://github.com/databyday/gtfs-data_exchange"
+  spec.description   = %q{A ruby wrapper for the [gtfs-data-exchange.com api](http://www.gtfs-data-exchange.com/api). List all agencies, or find a specific agency by its `dataexchange_id`.}
+  spec.homepage      = "https://github.com/databyday/gtfs-data-exchange-api-ruby"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

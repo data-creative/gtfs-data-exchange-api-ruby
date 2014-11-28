@@ -1,6 +1,6 @@
 # GTFS::DataExchange
 
-A ruby wrapper for the [gtfs-data-exchange.com api](http://www.gtfs-data-exchange.com/api). Exposes `agency` and `agencies` endpoints.
+A ruby wrapper for the [gtfs-data-exchange.com api](http://www.gtfs-data-exchange.com/api). List all agencies, or find a specific agency by its `dataexchange_id`.
 
 ## Installation
 
@@ -28,7 +28,7 @@ List all agencies.
 agencies = GTFS::DataExchange::API.agencies
 ````
 
-Response data is returned in JSON format by default. To return data in CSV format instead, pass the `:format` option ...
+By default, this will return an `Array` of Ruby `Hash` objects. Pass the 'csv' format option to return a CSV `String` instead.
 
 ```` rb
 agencies = GTFS::DataExchange::API.agencies(:format => "csv")
@@ -41,6 +41,8 @@ Find an agency by its `dataexchange_id`.
 ```` rb
 agency = GTFS::DataExchange::API.agency(:dataexchange_id => "shore-line-east")
 ````
+
+By default, this will return a Ruby `Hash` object.
 
 ## Contributing
 
