@@ -14,10 +14,10 @@ module GTFS
       #   This page also acts as the primary source for api reference documentation.
       BASE_URL = "http://www.gtfs-data-exchange.com/api"
 
-      # Lists all agencies.
+      # List all agencies.
       # @param [Hash] options the request options.
       # @option options [String] :format ('json') the requested data format.
-      # @raise [UnsupportedRequestFormat] if the request format is not supported by the service.
+      # @raise [UnsupportedRequestFormat] if the requested data format is not supported by the service.
       # @raise [ResponseCodeError, ResponseDataError] for unexpected responses.
       # @return [Array, String] the agencies data in the requested format.
       def self.agencies(options = {})
@@ -39,9 +39,9 @@ module GTFS
         end
       end
 
-      # Finds an agency by its `dataexchange_id`.
+      # Find an agency by its `dataexchange_id`.
       # @param [Hash] options the request options.
-      # @option options [String] :dataexchange_id ('shore-line-east') the requested data format.
+      # @option options [String] :dataexchange_id ('shore-line-east') the requested agency identifier.
       # @raise [UnrecognizedDataExchangeId] if the requested agency identifier is unrecognized by the service.
       # @raise [ResponseCodeError, ResponseDataError, ResponseAgencyError] for unexpected responses.
       # @return [Hash] the agency data.
