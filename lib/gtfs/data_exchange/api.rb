@@ -1,10 +1,25 @@
 require "httparty"
 
+# Top-level namespace referencing the [General Transit Feed Specification](https://developers.google.com/transit/gtfs/).
 module GTFS
+
+  # Namespace referencing the [data exchange](http://www.gtfs-data-exchange.com/), 
+  #   a third-party site "designed to help developers and transit agencies efficiently share and retrieve GTFS data."
   module DataExchange
+
+    # Contains all data exchange api methods and exceptions.
     class API
+
+      # The base url for api endpoints.
+      #   This page also acts as the primary source for api reference documentation.
       BASE_URL = "http://www.gtfs-data-exchange.com/api"
 
+      # List all agencies.
+      # @param [Hash] options the request options.
+      # @option options [String] :format ('json') the requested data format.
+      # @raise [UnsupportedRequestFormat] if the requested data format is not supported by the service.
+      # @raise [ResponseCodeError, ResponseDataError] for unexpected responses.
+      # @return [Array, String] the agencies data in the requested format.
       def self.agencies(options = {})
         format = options[:format] || "json"
         raise UnsupportedRequestFormat, "The requested data format, '#{format}', is not supported by the service. Try 'csv' or 'json' instead." unless ["json","csv"].include?(format)
@@ -24,6 +39,12 @@ module GTFS
         end
       end
 
+      # Find an agency by its `dataexchange_id`.
+      # @param [Hash] options the request options.
+      # @option options [String] :dataexchange_id ('shore-line-east') the requested agency identifier.
+      # @raise [UnrecognizedDataExchangeId] if the requested agency identifier is unrecognized by the service.
+      # @raise [ResponseCodeError, ResponseDataError, ResponseAgencyError] for unexpected responses.
+      # @return [Hash] the agency data.
       def self.agency(options = {})
         dataexchange_id = options[:dataexchange_id] || options[:data_exchange_id] || "shore-line-east"
 
@@ -37,19 +58,19 @@ module GTFS
         return response["data"]["agency"]
       end
 
-      # raised during an `API.agency` request when the requested `dataexchange_id` is unrecognized by the service
+      # Exception raised if the service does not recognize the requested *dataexchange_id*.
       class UnrecognizedDataExchangeId < ArgumentError ; end
 
-      # raised during an `API.agencies` request when the requested data `format` is not supported by the service
+      # Exception raised if the service does not support the requested data format.
       class UnsupportedRequestFormat < ArgumentError ; end
 
-      # raised when an unexpected response code is returned from the service
+      # Exception raised if the service returns an unexpected response code.
       class ResponseCodeError < StandardError ; end
 
-      # raised when unexpected or missing response data is returned from the service
+      # Exception raised if the service returns unexpected or missing response data.
       class ResponseDataError < StandardError ; end
 
-      # raised when unexpected or missing agency data is returned from the service
+      # Exception raised if the service returns unexpected or missing agency data.
       class ResponseAgencyError < StandardError ; end
     end
   end
