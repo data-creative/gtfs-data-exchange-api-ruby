@@ -1,6 +1,6 @@
 # GTFS::DataExchange
 
-A ruby wrapper for the [gtfs-data-exchange.com api](http://www.gtfs-data-exchange.com/api). List all agencies, or find a specific agency by its `dataexchange_id`.
+A ruby wrapper for the [gtfs-data-exchange.com](http://www.gtfs-data-exchange.com) [api](http://www.gtfs-data-exchange.com/api). List all agencies, or find a specific agency by its data exchange identifier.
 
 ## Installation
 
