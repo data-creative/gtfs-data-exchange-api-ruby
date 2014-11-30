@@ -36,7 +36,7 @@ agencies = GTFS::DataExchange::API.agencies(:format => "csv")
 
 ### Agency
 
-Find an agency by its `dataexchange_id`.
+Find an agency by its data exchange identifier.
 
 ```` rb
 agency = GTFS::DataExchange::API.agency(:dataexchange_id => "shore-line-east")
