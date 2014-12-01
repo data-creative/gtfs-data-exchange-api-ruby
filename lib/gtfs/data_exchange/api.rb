@@ -1,17 +1,15 @@
 require "httparty"
 
-# Top-level namespace referencing the [General Transit Feed Specification](https://developers.google.com/transit/gtfs/).
+# Top-level namespace referencing the General Transit Feed Specification (https://developers.google.com/transit/gtfs/).
 module GTFS
 
-  # Namespace referencing the [data exchange](http://www.gtfs-data-exchange.com/), 
-  #   a third-party site "designed to help developers and transit agencies efficiently share and retrieve GTFS data."
+  # Namespace referencing the data exchange (http://www.gtfs-data-exchange.com/), a third-party site "designed to help developers and transit agencies efficiently share and retrieve GTFS data."
   module DataExchange
 
     # Contains all data exchange api methods and exceptions.
     class API
 
-      # The base url for api endpoints.
-      #   This page also acts as the primary source for api reference documentation.
+      # The base url for api endpoints. This page also acts as the primary source for api reference documentation.
       BASE_URL = "http://www.gtfs-data-exchange.com/api"
 
       # List all agencies.
@@ -39,7 +37,7 @@ module GTFS
         end
       end
 
-      # Find an agency by its `dataexchange_id`.
+      # Find an agency by its data exchange identifier.
       # @param [Hash] options the request options.
       # @option options [String] :dataexchange_id ('shore-line-east') the requested agency identifier.
       # @raise [UnrecognizedDataExchangeId] if the requested agency identifier is unrecognized by the service.
