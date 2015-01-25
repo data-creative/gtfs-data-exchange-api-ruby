@@ -46,7 +46,7 @@ By default, this will return a Ruby `Hash` object.
 
 ## Contributing
 
-1. Fork it ( https://github.com/databyday/gtfs-data_exchange/fork )
+1. Fork it ( https://github.com/data-creative/gtfs-data_exchange/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Test your changes (optional, but encouraged `rspec spec/`)
 4. Commit your changes (`git commit -am 'Add some feature'`)

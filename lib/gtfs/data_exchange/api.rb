@@ -29,7 +29,8 @@ module GTFS
         when "json"
           raise ResponseCodeError unless response["status_code"] == 200
           raise ResponseDataError unless response["data"]
-          return response["data"]
+          parsed_response_data = response["data"].map{|a| Hash[a.map{|k,v| [k.to_sym, (v == "" ? nil : v)]}]}
+          return parsed_response_data
         when "csv"
           raise ResponseCodeError unless response.code == 200
           raise ResponseDataError unless response.body
@@ -48,12 +49,13 @@ module GTFS
 
         request_url = "#{BASE_URL}/agency?agency=#{dataexchange_id}"
         response = HTTParty.get(request_url)
-
         raise UnrecognizedDataExchangeId, "The requested dataexchange_id, '#{dataexchange_id}', was not recognized by the service." if response["status_code"] == 404 && response["status_txt"] == "AGENCY_NOT_FOUND"
         raise ResponseCodeError unless response["status_code"] == 200
         raise ResponseDataError unless response["data"]
         raise ResponseAgencyError unless response["data"]["agency"]
-        return response["data"]["agency"]
+
+        parsed_agency_data = Hash[response["data"]["agency"].map{|k,v| [k.to_sym, (v == "" ? nil : v)]}]
+        return parsed_agency_data
       end
 
       # Exception raised if the service does not recognize the requested *dataexchange_id*.
