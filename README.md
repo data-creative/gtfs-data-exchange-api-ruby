@@ -1,6 +1,6 @@
 # GTFS::DataExchange
 
-A ruby wrapper for the [gtfs-data-exchange.com api](http://www.gtfs-data-exchange.com/api). Exposes `agency` and `agencies` endpoints.
+A ruby wrapper for the [gtfs-data-exchange.com](http://www.gtfs-data-exchange.com) [api](http://www.gtfs-data-exchange.com/api). List all agencies, or find a specific agency by its data exchange identifier.
 
 ## Installation
 
@@ -28,7 +28,7 @@ List all agencies.
 agencies = GTFS::DataExchange::API.agencies
 ````
 
-Response data is returned in JSON format by default. To return data in CSV format instead, pass the `:format` option ...
+By default, this will return an `Array` of Ruby `Hash` objects. Pass the 'csv' format option to return a CSV `String` instead.
 
 ```` rb
 agencies = GTFS::DataExchange::API.agencies(:format => "csv")
@@ -36,16 +36,19 @@ agencies = GTFS::DataExchange::API.agencies(:format => "csv")
 
 ### Agency
 
-Find an agency by its `dataexchange_id`.
+Find an agency by its data exchange identifier.
 
 ```` rb
 agency = GTFS::DataExchange::API.agency(:dataexchange_id => "shore-line-east")
 ````
 
+By default, this will return a Ruby `Hash` object.
+
 ## Contributing
 
-1. Fork it ( https://github.com/databyday/gtfs-data_exchange/fork )
+1. Fork it ( https://github.com/data-creative/gtfs-data_exchange/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+3. Test your changes (optional, but encouraged `rspec spec/`)
+4. Commit your changes (`git commit -am 'Add some feature'`)
+5. Push to the branch (`git push origin my-new-feature`)
+6. Create a new Pull Request

@@ -1,5 +1,7 @@
 module GTFS
   module DataExchange
-    VERSION = "0.0.1"
+
+    # The current gem version. Reference the releases list (https://github.com/data-creative/gtfs-data-exchange-api-ruby/releases) for previous releases.
+    VERSION = "0.0.4"
   end
 end
