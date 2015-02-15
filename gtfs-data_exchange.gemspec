@@ -7,9 +7,9 @@ Gem::Specification.new do |spec|
   spec.name          = "gtfs-data_exchange"
   spec.version       = GTFS::DataExchange::VERSION
   spec.authors       = ["MJ Rossetti (@s2t2)"]
-  spec.email         = ["s2t2mail@gmail.com"]
-  spec.summary       = %q{A ruby wrapper for the gtfs-data-exchange.com api.}
-  spec.description   = %q{A ruby wrapper for the gtfs-data-exchange.com api. List all agencies, or find a specific agency by its data exchange identifier.}
+  spec.email         = ["s2t2mail+rubygems@gmail.com"]
+  spec.summary       = %q{This gem has been renamed from *gtfs-data_exchange* to *gtfs_data_exchange_api*.}
+  spec.description   = %q{This gem has been renamed from *gtfs-data_exchange* to *gtfs_data_exchange_api*. See https://rubygems.org/gems/gtfs_data_exchange_api for the current version.}
   spec.homepage      = "https://github.com/data-creative/gtfs-data-exchange-api-ruby"
   spec.license       = "MIT"
 
