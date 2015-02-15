@@ -4,7 +4,7 @@ A ruby wrapper for the [gtfs-data-exchange.com](http://www.gtfs-data-exchange.co
 
 List all agencies, or find a specific agency by its data exchange identifier.
 
-[![Gem Version](https://badge.fury.io/rb/gtfs-data_exchange.svg)](http://badge.fury.io/rb/gtfs-data_exchange)
+[![Gem Version](https://badge.fury.io/rb/gtfs_data_exchange_api.svg)](http://badge.fury.io/rb/gtfs-data_exchange)
 
 ## Installation
 
