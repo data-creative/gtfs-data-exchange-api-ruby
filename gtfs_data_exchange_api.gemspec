@@ -1,13 +1,13 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'gtfs/data_exchange/version'
+require 'gtfs_data_exchange_api/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "gtfs-data_exchange"
-  spec.version       = GTFS::DataExchange::VERSION
+  spec.name          = "gtfs_data_exchange_api"
+  spec.version       = GTFSDataExchangeAPI::VERSION
   spec.authors       = ["MJ Rossetti (@s2t2)"]
-  spec.email         = ["s2t2mail@gmail.com"]
+  spec.email         = ["s2t2mail+rubygems@gmail.com"]
   spec.summary       = %q{A ruby wrapper for the gtfs-data-exchange.com api.}
   spec.description   = %q{A ruby wrapper for the gtfs-data-exchange.com api. List all agencies, or find a specific agency by its data exchange identifier.}
   spec.homepage      = "https://github.com/data-creative/gtfs-data-exchange-api-ruby"
