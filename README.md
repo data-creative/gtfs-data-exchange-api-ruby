@@ -66,10 +66,10 @@ By default, this will return a Ruby `Hash` object.
 3. Run tests (`bundle exec rspec spec/`) 
 4. Manually test, as desired:
   + `pry`
-  + `require 'gtfs/data_exchange'`
+  + `require 'gtfs_data_exchange_api'`
   + test functionality
+6. Create a new [release tag](https://github.com/data-creative/gtfs-data-exchange-api-ruby/releases/new)
+7. Push gem build to rubygems (`gem push gtfs_data_exchange_api-X.X.X.gem`)
 5. Merge version-named branch into master, if applicable
-6. Create and tag a version-named [release](https://github.com/data-creative/gtfs-data-exchange-api-ruby/releases/new)
-7. Push gem build to rubygems (`gem push gtfs-data_exchange-X.X.X.gem`)
 
 
